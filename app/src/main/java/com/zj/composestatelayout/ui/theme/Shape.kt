@@ -1,4 +1,4 @@
-package com.zj.composestate.ui.theme
+package com.zj.composestatelayout.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

@@ -1,4 +1,4 @@
-package com.zj.composestate.ui.theme
+package com.zj.composestatelayout.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

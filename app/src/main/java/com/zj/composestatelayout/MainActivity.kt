@@ -1,4 +1,4 @@
-package com.zj.composestate
+package com.zj.composestatelayout
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,7 +8,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.zj.composestate.ui.theme.ComposeStateTheme
+import com.zj.composestatelayout.ui.theme.ComposeStateTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
