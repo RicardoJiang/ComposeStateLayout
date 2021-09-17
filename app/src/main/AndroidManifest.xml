@@ -8,12 +8,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ComposeState">
+        android:theme="@style/Theme.ComposeStateLayout">
         <activity
             android:name="com.zj.composestatelayout.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ComposeState.NoActionBar">
+            android:theme="@style/Theme.ComposeStateLayout.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
