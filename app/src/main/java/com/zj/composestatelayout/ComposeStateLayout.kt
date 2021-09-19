@@ -1,6 +1,8 @@
 package com.zj.composestatelayout
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 
 
 enum class PageState {
@@ -17,7 +19,7 @@ data class PageStateData(
 
 
 data class StateLayoutData(
-    val tag: Any?,
+    val pageStateData: PageStateData,
     val retry: OnRetry = {}
 )
 
@@ -25,26 +27,29 @@ typealias OnRetry = (PageStateData) -> Unit
 
 @Composable
 fun ComposeStateLayout(
+    modifier: Modifier = Modifier,
     pageStateData: PageStateData,
     onRetry: OnRetry = { },
-    loading: @Composable (StateLayoutData) -> Unit = { },
+    loading: @Composable (StateLayoutData) -> Unit = {},
     empty: @Composable (StateLayoutData) -> Unit = {},
     error: @Composable (StateLayoutData) -> Unit = {},
     content: @Composable () -> Unit = { }
 ) {
     val stateLayoutData = StateLayoutData(pageStateData, onRetry)
-    when (pageStateData.status) {
-        PageState.LOADING -> {
-            loading(stateLayoutData)
-        }
-        PageState.EMPTY -> {
-            empty(stateLayoutData)
-        }
-        PageState.ERROR -> {
-            error(stateLayoutData)
-        }
-        else -> {
-            content()
+    Box(modifier = modifier) {
+        when (pageStateData.status) {
+            PageState.LOADING -> {
+                loading(stateLayoutData)
+            }
+            PageState.EMPTY -> {
+                empty(stateLayoutData)
+            }
+            PageState.ERROR -> {
+                error(stateLayoutData)
+            }
+            else -> {
+                content()
+            }
         }
     }
 }
