@@ -1,4 +1,4 @@
-package com.zj.composestatelayout
+package com.zj.statelayout
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.runtime.Composable
@@ -47,7 +47,7 @@ fun ComposeStateLayout(
             PageState.ERROR -> {
                 error(stateLayoutData)
             }
-            else -> {
+            PageState.CONTENT -> {
                 content()
             }
         }

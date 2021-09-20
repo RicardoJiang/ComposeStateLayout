@@ -19,6 +19,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.zj.composestatelayout.ui.theme.ComposeStateTheme
+import com.zj.statelayout.PageState
+import com.zj.statelayout.StateLayoutData
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
