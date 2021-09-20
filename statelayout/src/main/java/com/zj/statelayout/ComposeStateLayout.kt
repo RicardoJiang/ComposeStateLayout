@@ -12,16 +12,9 @@ enum class PageState {
     CONTENT
 }
 
-data class PageStateData(
-    val status: PageState,
-    val tag: Any? = null
-)
+data class PageStateData(val status: PageState, val tag: Any? = null)
 
-
-data class StateLayoutData(
-    val pageStateData: PageStateData,
-    val retry: OnRetry = {}
-)
+data class StateLayoutData(val pageStateData: PageStateData, val retry: OnRetry = {})
 
 typealias OnRetry = (PageStateData) -> Unit
 
@@ -38,18 +31,10 @@ fun ComposeStateLayout(
     val stateLayoutData = StateLayoutData(pageStateData, onRetry)
     Box(modifier = modifier) {
         when (pageStateData.status) {
-            PageState.LOADING -> {
-                loading(stateLayoutData)
-            }
-            PageState.EMPTY -> {
-                empty(stateLayoutData)
-            }
-            PageState.ERROR -> {
-                error(stateLayoutData)
-            }
-            PageState.CONTENT -> {
-                content()
-            }
+            PageState.LOADING -> loading(stateLayoutData)
+            PageState.EMPTY -> empty(stateLayoutData)
+            PageState.ERROR -> error(stateLayoutData)
+            PageState.CONTENT -> content()
         }
     }
 }
